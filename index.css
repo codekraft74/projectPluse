@@ -1,0 +1,993 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Main container for logo and search bar */
+.top-bar {
+width: 100%;
+display: flex;
+justify-content: space-between; /* Default: logo left, search bar right */
+align-items: center;
+background-color: hsl(0, 38%, 94%); /* Optional: Navbar background color */
+color: white;
+padding: 10px 20px;
+position: relative;
+}
+
+/* Logo styling (always on the left) */
+.logo {
+flex: 1; /* Ensures the logo stays on the left */
+}
+
+.logo img {
+height: 60px; /* Adjust as needed */
+width: auto;
+border-radius: 50%;
+}
+
+/* Search container styling (center on all screens) */
+.search-container {
+flex: 2; /* Center the search bar by allowing it to take more space */
+display: flex;
+justify-content: center; /* Align search bar in the center */
+}
+
+.search-container input {
+height: 35px;
+padding: 5px 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+outline: none;
+font-size: 16px;
+width: 70%; /* Default input width */
+max-width: 400px; /* Prevent search bar from becoming too wide */
+}
+
+.search-container button {
+height: 35px;
+margin-left: 5px;
+padding: 0 15px;
+background-color: #f1c40f;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+background-color: #e67e22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.top-bar {
+flex-direction: row; /* Maintain row direction */
+align-items: center; /* Align items in the center */
+}
+
+.search-container {
+flex: 1; /* Search bar takes equal space */
+justify-content: center; /* Center the search bar */
+}
+
+.search-container input {
+width: 80%; /* Wider input field for smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+.logo img {
+height: 40px; /* Resize logo for smaller screens */
+}
+
+.search-container input {
+font-size: 14px; /* Smaller font size for input */
+}
+
+.search-container button {
+font-size: 14px;
+}
+}
+/* Laptop-specific styling */
+@media (min-width: 1024px) and (max-width: 1366px) {
+.top-bar {
+padding: 15px 30px; /* Slightly increase padding for a spacious look */
+}
+
+.logo img {
+height: 50px; /* Adjust logo size for laptops */
+}
+
+.search-container input {
+width: 60%; /* Keep the search bar moderate in width */
+max-width: 500px; /* Allow slightly wider search bar */
+}
+
+.search-container button {
+font-size: 16px; /* Keep the button text readable */
+padding: 0 20px; /* Add more padding for a better touch area */
+}
+}
+
+/* Background image for the navbar */
+header {
+  background-image: url('img/Blue\ White\ Patterns\ Digital\ Business\ Blog\ Banner.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+/* PC-specific styling */
+@media (min-width: 1366px) {
+header {
+background-image: url('img/Blue White Patterns Digital Business Blog Banner.png'); /* Replace with your image URL */
+background-size: cover; /* Ensure the image covers the header */
+background-position: center; /* Center the background image */
+height: 100vh; /* Increase header height for PC screens */
+width: 100%;
+display: flex;
+align-items: center; /* Vertically align content */
+position: relative; /* Maintain the position for any additional elements */
+ /* Add extra padding for spacious layout on larger screens */
+}
+}
+
+/* iPad-specific styling */
+@media (min-width: 768px) and (max-width: 1024px) {
+header {
+background-image: url('img/Blue White Patterns Digital Business Blog Banner.png'); /* Replace with your image URL */
+background-size: cover; /* Ensure the image scales properly */
+background-position: center; /* Center the background image */
+height: 550px; /* Adjust height to fit iPad screens */
+display: flex;
+align-items: center; /* Vertically align content */
+position: relative; /* Maintain the position */
+}
+}
+
+/* Navbar container */
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Logo Styling */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Links */
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #f1c40f;
+}
+
+/* Search bar container */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-container button {
+  height: 30px;
+  margin-left: 5px;
+  padding: 0 15px;
+  background-color: #f1c40f;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #e67e22;
+}
+
+h3 {
+  color: white;
+  margin-top: 110px;
+  margin-right: 290px;
+  width: 69px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .search-container {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu li a {
+    font-size: 16px;
+  }
+
+  .search-container input {
+    font-size: 14px;
+  }
+
+  .search-container button {
+    font-size: 14px;
+  }
+}
+
+/* button  */
+/* Default styles for all screen sizes */
+.btn {
+text-align: center;
+margin-top: 180px;
+margin-left: 70px;
+}
+
+.btn button {
+background-color: #e44776;
+padding: 10px 20px;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+background-color: #45a049;
+}
+
+/* Media query for iPad (portrait and landscape) */
+@media (max-width: 1024px) {
+.btn {
+margin-top: 100px;
+margin-left: 30px;
+}
+
+.btn button {
+font-size: 14px;
+padding: 8px 16px;
+}
+}
+
+/* Media query for PC (larger screens) */
+@media (min-width: 1025px) {
+.btn {
+margin-top: 340px;
+margin-left: 180px;
+}
+
+.btn button {
+font-size: 20px;
+padding: 10px 20px;
+
+}
+}
+
+
+/* section */
+/* General styling for the intro section */
+.intro {
+background-color: whitesmoke;
+color: hsl(0, 82%, 2%);
+padding: 40px 0;
+
+}
+
+/* Container styling */
+.intro .container {
+width: 100%;
+
+max-width: 1200px;
+}
+
+/* Heading styling */
+.intro h1 {
+font-size: 36px;
+font-family: 'Arial', sans-serif;
+margin-bottom: 20px;
+
+font-weight: bold;
+text-align: center;
+
+}
+
+/* Paragraph styling */
+.intro p {
+font-size: 18px;
+line-height: 1.5;
+font-family: 'Arial', sans-serif;
+max-width: 800px;
+margin: 10px;
+
+}
+
+/* Add some responsiveness */
+@media (max-width: 768px) {
+.intro h1 {
+  font-size: 28px;
+}
+
+.intro p {
+  font-size: 16px;
+}
+}
+
+/* second*/
+/* Section Style */
+.section {
+padding: 50px 20px;
+background-color: #f4f4f4;
+text-align: center;
+}
+
+#popular-topics h2 {
+font-size: 32px;
+color: #333;
+margin-bottom: 20px;
+font-family: 'Arial', sans-serif;
+}
+
+.tag-cloud {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.tag-cloud span {
+background-color: #e44776;
+color: white;
+padding: 10px 20px;
+border-radius: 25px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tag-cloud span:hover {
+background-color: #45a049;
+transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+#popular-topics h2 {
+font-size: 28px;
+}
+
+.tag-cloud span {
+font-size: 14px;
+padding: 8px 16px;
+}
+}
+/* 3*/
+/* Section Style */
+
+#featured-blogs {
+padding: 30px 10px;
+display: flex;
+flex-direction: column;
+gap: 0px;
+}
+
+h2 {
+text-align: center;
+margin-bottom: 30px;
+}
+
+
+.blog-card,
+.blog-card1 {
+display: flex;
+flex-direction: column;
+background-color: #ffffff;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 8px;
+max-width: 700px;
+margin: auto;
+
+}
+
+.blog-card img,
+.blog-card1 img {
+width: 60%;
+max-width: 300px;
+display: block;
+}
+
+.blog-card-content {
+margin-top: 20px;
+font-size: 20px;
+color: red;
+
+}
+.blog-card-content p{
+padding: 3px;
+color: #333;
+text-align: left;
+}
+/* Responsive layout for desktop */
+@media (min-width: 768px) {
+.blog-card {
+display: flex;
+flex-direction: row;
+gap: 20px;
+align-items: flex-start;
+}
+
+.blog-card img {
+order: 0;
+}
+
+.blog-card1 {
+display: flex;
+flex-direction: row-reverse;
+gap: 20px;
+align-items: flex-start;
+}
+
+.blog-card1 img {
+order: 1;
+}
+}
+
+/* Ensure mobile left-right layout */
+@media (max-width: 767px) {
+.blog-card img {
+align-self: flex-start;
+}
+
+.blog-card1 img {
+align-self: flex-end;
+}
+}
+
+/* 4*/
+/* Section Style */
+
+/* Section Style */
+#ratings {
+padding: 60px 20px;
+background-color: #da98b7;
+text-align: center;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#ratings h2 {
+font-size: 36px;
+color: #333;
+margin-bottom: 30px;
+font-family: 'Arial', sans-serif;
+font-weight: 600;
+}
+
+/* Rating Container */
+.rating-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+/* Individual Star Styling */
+.rating {
+font-size: 40px;
+color: #e4e4e4; /* Light grey color for inactive stars */
+cursor: pointer;
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.rating span:hover {
+transform: scale(1.2);
+color: #fbc02d; /* Yellow color on hover */
+}
+
+/* Active Stars */
+.rating span.active {
+color: #fbc02d; /* Yellow color for active stars */
+}
+
+/* Description Text Styling */
+#ratings p {
+font-size: 16px;
+color: #555;
+line-height: 1.5;
+max-width: 600px;
+margin: 0 auto;
+font-family: 'Arial', sans-serif;
+}
+
+/* Animation for hover effect */
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.2);
+}
+100% {
+transform: scale(1);
+}
+}
+
+.rating span:hover {
+animation: pulse 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+#ratings h2 {
+font-size: 28px;
+}
+
+.rating {
+font-size: 30px;
+}
+
+#ratings p {
+font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+.rating-container {
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.rating {
+font-size: 30px;
+margin-bottom: 10px;
+}
+}
+
+/* General styling */
+
+
+/* Comments Section */
+.comments-section {
+background-color: lavender;
+padding: 20px;
+margin: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section h4 {
+font-size: 1.5em;
+margin-bottom: 10px;
+}
+
+.comments-section textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: vertical;
+}
+
+.comments-section button {
+background-color: #c53e5c;
+color: white;
+border: none;
+padding: 10px 15px;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 10px;
+}
+
+.comments-section button:hover {
+background-color: #0056b3;
+}
+
+.existing-comments {
+margin-top: 20px;
+}
+
+.existing-comments ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+.existing-comments li {
+background-color: #f9f9f9;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.existing-comments strong {
+color: #007bff;
+}
+
+/* Call to Action Section */
+.cta {
+background-color: lavender;
+color: black;
+padding: 20px;
+text-align: center;
+margin: 20px;
+border-radius: 8px;
+}
+
+.cta h4 {
+font-size: 1.5em;
+margin-bottom: 10px;
+}
+
+.cta p {
+font-size: 1.2em;
+margin-bottom: 10px;
+}
+
+.cta button {
+background-color: #bd5764;
+color: hsl(213, 18%, 88%);
+border: 1px solid #007bff;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.cta button:hover {
+background-color: #3b0606;
+}
+
+/* Author Bio Section */
+.author-bio {
+background-color: #f085a9;
+padding: 20px;
+margin: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.author-bio h4 {
+font-size: 1.5em;
+margin-bottom: 10px;
+}
+
+.author-bio p {
+font-size: 1.4em;
+color: #251081;
+}
+
+
+/* 5*/
+.section {
+padding: 20px 3px;
+text-align: center;
+background-color: #e9ecef;
+box-shadow: 0 4px 8px rgba(160, 90, 90, 0.1);
+}
+
+h2 {
+font-size: 45px;
+color: #333;
+margin-bottom: 30px;
+font-weight: 600;
+}
+
+p {
+font-size: 18px;
+color: #555;
+margin-bottom: 20px;
+line-height: 1.6;
+}
+
+/* Animation Container */
+.animation-container {
+display: flex;
+justify-content: space-between;
+gap: 30px;
+flex-wrap: wrap;
+padding: 0 20px;
+}
+
+/* Individual Animation Box Styling */
+.animation-box {
+width: 30%;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+transition: all 0.3s ease;
+text-align: center;
+font-family: 'Arial', sans-serif;
+position: relative;
+}
+
+.animation-box i {
+font-size: 48px;
+color: #e44776;
+margin-bottom: 20px;
+transition: transform 0.3s ease;
+}
+
+.animation-box h3 {
+font-size: 24px;
+color: #333;
+margin-bottom: 15px;
+}
+
+.animation-box p {
+font-size: 16px;
+color: #666;
+line-height: 1.5;
+}
+
+.animation-box:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover to Expand Effect */
+.animation-box.hover-expand:hover {
+background-color: #f1f1f1;
+}
+
+.animation-box.hover-expand i {
+transform: scale(1.3);
+}
+
+/* Click to Rotate Effect */
+.animation-box.click-rotate:active {
+transform: rotate(360deg);
+}
+
+.animation-box.click-rotate i {
+transition: transform 0.3s ease-in-out;
+}
+
+/* Fade-in on Scroll Effect */
+.animation-box.fade-in {
+opacity: 0;
+transition: opacity 1s ease-in-out;
+}
+
+.animation-box.visible {
+opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.animation-container {
+flex-direction: column;
+align-items: center;
+}
+
+.animation-box {
+width: 80%;
+margin-bottom: 20px;
+}
+}
+
+@media (max-width: 480px) {
+.animation-box {
+width: 100%;
+}
+}
+
+/* 6*/
+/* Section Style */
+#recommendations {
+padding: 60px 20px;
+background-color: #f9f9f9;
+text-align: center;
+border-top: 5px solid #e44776;
+}
+
+#recommendations h2 {
+font-size: 36px;
+color: #333;
+margin-bottom: 10px;
+font-family: 'Arial', sans-serif;
+}
+
+#recommendations p {
+font-size: 18px;
+color: #555;
+line-height: 1.6;
+font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+#recommendations h2 {
+font-size: 28px;
+}
+
+#recommendations p {
+font-size: 16px;
+}
+}
+/* 7*/
+/* Section Style */
+#blog-schedule {
+padding: 60px 20px;
+background-color: #f3f3f3;
+text-align: center;
+border-top: 5px solid #e44776;
+border-bottom: 5px solid #e44776;
+}
+
+#blog-schedule h2 {
+font-size: 36px;
+color: #333;
+margin-bottom: 15px;
+font-family: 'Arial', sans-serif;
+text-transform: uppercase;
+}
+
+#blog-schedule p {
+font-size: 18px;
+color: #555;
+margin-bottom: 30px;
+font-family: 'Arial', sans-serif;
+}
+
+.schedule-list {
+background-color: #ffffff;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+display: inline-block;
+width: 100%;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.schedule-list ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.schedule-list li {
+font-size: 18px;
+color: #333;
+margin-bottom: 20px;
+font-family: 'Arial', sans-serif;
+transition: transform 0.3s ease;
+}
+
+.schedule-list li:hover {
+transform: translateX(10px);
+}
+
+.schedule-list li .date {
+font-weight: bold;
+color: #e44776;
+}
+
+@media (max-width: 768px) {
+#blog-schedule h2 {
+font-size: 28px;
+}
+
+#blog-schedule p {
+font-size: 16px;
+}
+
+.schedule-list {
+padding: 20px;
+}
+
+.schedule-list li {
+font-size: 16px;
+}
+}
+/* 8*/
+/* Section Style */
+#faqs {
+padding: 60px 20px;
+background-color: #f9f9f9;
+text-align: center;
+border-top: 5px solid #e44776;
+border-bottom: 5px solid #e44776;
+}
+
+#faqs h2 {
+font-size: 36px;
+color: #333;
+margin-bottom: 30px;
+font-family: 'Arial', sans-serif;
+text-transform: uppercase;
+}
+
+.faq-item {
+background-color: #ffffff;
+padding: 20px;
+margin-bottom: 15px;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease;
+}
+
+.faq-item h3 {
+font-size: 24px;
+color: #333;
+margin-bottom: 10px;
+}
+
+.faq-item p {
+font-size: 18px;
+color: #555;
+font-family: 'Arial', sans-serif;
+}
+
+.faq-item:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+#faqs h2 {
+font-size: 28px;
+}
+
+.faq-item {
+padding: 15px;
+}
+
+.faq-item h3 {
+font-size: 20px;
+}
+
+.faq-item p {
+font-size: 16px;
+}
+}
+
+

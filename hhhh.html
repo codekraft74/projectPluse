@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+    <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="style.css">
+   
+  </head>
+  <body>
+    <div class="top-bar">
+      <!-- Logo (left) -->
+      <div class="logo">
+        <h1>Blogs</h1>
+        <!-- Replace with your logo URL -->
+      </div>
+
+      <!-- Search bar (centered) -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." />
+        <button>Go</button>
+      </div>
+    </div>
+
+    <section class="intro">
+        <h2>Welcome to the Blog!</h2>
+        <p>Stay updated with the latest technical insights, programming tutorials, software development trends, and industry news.</p>   
+         </section>
+
+ <!-- Spacer for fixed header -->
+ <div class="spacer"></div>
+
+ <!-- Blogs Container -->
+ <div class="blogs-container">
+     <!-- Blog Cards -->
+     <section class="blog-card">
+         <img src="img/ml.jpeg" alt="Machine Learning" />
+         <h2>Machine Learning</h2>
+         <p>
+             Machine Learning is a part of Artificial Intelligence where computers
+             learn from data and improve automatically.
+         </p>
+         <a href="cont.html" class="read-more">Read More</a>
+     </section>
+
+     <section class="blog-card">
+         <img src="img/ml.jpeg" alt="Deep Learning" />
+         <h2>Deep Learning</h2>
+         <p>
+             Deep Learning is a subset of Machine Learning that uses neural networks
+             to simulate human brain functions.
+         </p>
+         <a href="blog_page.html" class="read-more">Read More</a>
+     </section>
+</div>
+<footer>
+  <div class="footer-container">
+    <!-- Logo and About Section -->
+    <div class="footer-logo">
+      <h4 id="footer-title">Code Kraft</h4>
+      <p id="footer-description">
+        Your go-to platform for programming and tech blogs, courses, and more. We aim to provide high-quality tutorials, real-world coding examples, and tech insights to help you grow as a developer. From web development to machine learning, our content covers a wide range of topics designed for beginners to experts. Join our community and start learning today!
+      </p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+      <h4 style="text-align: center;">Our Services</h4>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">App Development</a></li>
+        <li><a href="#">SEO Services</a></li>
+        <li><a href="#">Consulting</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+        <li><a href="#">Cloud Solutions</a></li>
+        <li><a href="#">UI/UX Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Technology Blogs Section -->
+    <div class="blogs">
+      <h4>Technology Blogs</h4>
+      <ul>
+        <li><a href="#">Latest Trends in AI</a></li>
+        <li><a href="#">Web Development Tips</a></li>
+        <li><a href="#">Cloud Computing 101</a></li>
+        <li><a href="#">Future of Blockchain</a></li>
+        <li><a href="#">Machine Learning for Beginners</a></li>
+        <li><a href="#">Best Programming Languages to Learn</a></li>
+        <li><a href="#">How to Build a Mobile App</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="quick-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us Section -->
+    <div class="follow-us">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Language Selector -->
+  <div class="languages">
+    <label for="language-select">Select Language:</label>
+    <select id="language-select" onchange="changeLanguage()">
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Contact us at: <a href="mailto:codekraft1325@gmail.com">codekraft1325@gmail.com</a></p>
+    <p>Location: Balaghat,M.P</p>
+    <p>&copy; 2025 Code Kraft. All rights reserved.</p>
+
+  </div>
+  
+</footer>
+
+
+<script>
+  function changeLanguage() {
+      var language = document.getElementById("language-select").value;
+
+      if (language === "hindi") {
+          document.getElementById("footer-title").innerHTML = "कोड क्राफ्ट";
+          document.getElementById("footer-description").innerHTML = "आपका पसंदीदा प्लेटफ़ॉर्म प्रोग्रामिंग और टेक ब्लॉग, कोर्स और अधिक के लिए।";
+      } else {
+          document.getElementById("footer-title").innerHTML = "Code Kraft";
+          document.getElementById("footer-description").innerHTML = "Your go-to platform for programming and tech blogs, courses, and more.";
+      }
+  }
+</script>
+
+  </body>
+</html>

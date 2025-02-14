@@ -1,0 +1,79 @@
+.wrapper {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: floralwhite;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+h1 {
+    color: black;
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 40px;
+}
+.project {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    width: 23%;
+    text-align: center;
+}
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.project img {
+    width: 100%;
+    height: 230px; /* Image height fixed for consistency */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+@media (min-width: 1025px) {
+    .project {
+        width: 35%;  /* PC के लिए चार प्रोजेक्ट्स एक साथ दिखाने के लिए */
+        height: auto;  /* div की height को auto किया गया ताकि ज्यादा लंबा न हो */
+    }
+    .project img {
+        width: 100%; /* इमेज को div के अनुसार 100% चौड़ा किया गया */
+        height: 250px; /* इमेज की ऊंचाई को कंट्रोल किया गया */
+        object-fit: cover; /* इमेज को सही तरीके से फिट करने के लिए */
+    }
+}
+.project h2 {
+    margin: 10px 0 5px;
+    color:  rgb(214, 77, 146);
+    font-size: 30px;
+}
+.project p {
+    color: #555;
+    padding: 0 10px;
+    text-align: left;
+}
+@media (max-width: 1024px) {
+    .project {
+        width: 48%;
+    }
+}
+@media (max-width: 600px) {
+    .project {
+        width: 100%;
+    }
+}

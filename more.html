@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--  Fonts के लिए Google Fonts इंटीग्रेट करें। -->
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="serch.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>What is AI?</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    .co{
+      padding: 20px;
+      padding-top: 80px;
+      background-color: #333;
+
+      
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 120px;
+
+      background-color: rgb(5, 1, 1);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .container h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #ff9800;
+    }
+
+    h2 {
+      color: #ff5722;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+    a {
+      color: #ff9800;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    .img-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .img-container img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .img-container p {
+      margin-top: 10px;
+      font-style: italic;
+    }
+    .im img{
+        width: 100%;
+    }
+   
+    /* autor*/
+    .author-section {
+        margin-top: 40px;
+        text-align: center;
+      }
+    
+      .author-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+    
+      .author-img {
+        width: 100px;
+        height: 90px;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    
+      .author-info p {
+        max-width: 600px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ffffff;
+      }
+      /* input */
+      .input-section {
+        margin-top: 30px;
+        background-color: #333;
+        padding: 20px;
+
+      }
+      .input-section h3{
+        color: orange;
+      }
+  
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 90%;
+        background-color: #333;
+        padding: 20px;
+        margin-top: 20px;
+        color: #fff;
+        border: 1px solid ;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        outline: none;
+      }
+  
+      button {
+        background-color: #ff5722;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 10px;
+
+      }
+  
+      button:hover {
+        background-color: #e64a19;
+      }
+   
+  </style>
+</head>
+<body>
+  <!-- HEader -->
+  <header>
+    <h1>Technical blog</h1>
+    <div class="search-bar">
+      <input type="search" id="searchInput" placeholder="Search blogs by name..." oninput="showSuggestions()" onkeydown="handleKeyPress(event)">
+      <ul id="suggestionsList" class="suggestions"></ul>
+    </div>
+  </header>
+  
+
+
+  <div class="co">
+  <div class="container" id="Artificial-Intelligence">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4ydDKl6ogRwYaHbphbRFx92FhEzdgbsUlw&s" alt="Main Image" class="main-image">
+    <h1>Artificial Intelligence </h1>
+
+    <h2>What is Artificial Intelligence (AI)?</h2>
+
+    <p>
+      Artificial Intelligence (AI) refers to machines or computer systems that can perform tasks requiring human-like intelligence. These tasks include problem-solving, decision-making, learning, and understanding language.
+    </p>
+
+    <h2>When and How Did AI Start?</h2>
+    <div class="im">
+    <img src="img/timeline.png" alt="">
+</div>
+    <ul>
+      <li><strong>1950:</strong> Alan Turing, a famous scientist, raised a question: "Can machines think?"</li>
+      <li><strong>1956:</strong> John McCarthy introduced the term "Artificial Intelligence" at Dartmouth College, marking AI's official birth.</li>
+      <li><strong>1980s:</strong> Expert systems gained popularity for simulating human decision-making.</li>
+      <li><strong>2010s:</strong> AI advanced with Machine Learning and Deep Learning technologies.</li>
+    </ul>
+
+    <h2>Why Was AI Developed?</h2>
+    <p>AI was created to:</p>
+    <ul>
+      <li>Make human tasks easier and more efficient.</li>
+      <li>Solve complex problems faster and more accurately.</li>
+      <li>Automate repetitive tasks and improve decision-making using large datasets.</li>
+    </ul>
+
+    <h2>Who Created AI?</h2>
+    <ul>
+      <li><strong>Alan Turing:</strong> Provided the foundation for AI concepts.</li>
+      <li><strong>John McCarthy:</strong> Coined the term "Artificial Intelligence."</li>
+      <li><strong>Geoffrey Hinton:</strong> Pioneered Deep Learning techniques.</li>
+      <li>Companies like Google, IBM, and OpenAI played significant roles in modern AI advancements.</li>
+    </ul>
+
+    <!-- Added Image and Content about Alan Turing -->
+    <div class="img-container">
+      <img src="img/al.webp" alt="Alan Turing">
+      <p><strong>Alan Turing</strong>, widely regarded as the father of AI, was a British mathematician, computer scientist, and cryptanalyst. His work on the concept of a universal machine laid the foundation for the modern computer, and his famous "Turing Test" is still used today to measure a machine's ability to exhibit intelligent behavior. Turing's groundbreaking contributions to AI and computing continue to influence technological advancements.</p>
+    </div>
+
+    <h2>Applications of AI</h2>
+    <ul>
+      <li><strong>Chatbots:</strong> Like ChatGPT for interactive conversations.</li>
+      <li><strong>Automation:</strong> Robots in manufacturing industries.</li>
+      <li><strong>Healthcare:</strong> Disease diagnosis and personalized treatments.</li>
+      <li><strong>Transportation:</strong> Self-driving cars (e.g., Tesla).</li>
+      <li><strong>Finance:</strong> Fraud detection and stock market predictions.</li>
+      <li><strong>Entertainment:</strong> Movie recommendations on platforms like Netflix.</li>
+    </ul>
+
+    <h2>Future of AI</h2>
+    <p>
+      Smarter, more intuitive machines will become common. Advances in healthcare, education, and research will revolutionize industries. However, ethical challenges like job automation and data privacy concerns will need to be addressed.
+    </p>
+
+    <h2>Conclusion</h2>
+   <p>
+  Artificial Intelligence has revolutionized the way we live and work. From making everyday tasks easier to solving complex global challenges, AI has proven its potential across various industries. However, as we continue to develop and implement AI, it is crucial to address ethical considerations such as data privacy, security, and the impact on employment. With advancements in machine learning and deep learning, the future of AI holds immense possibilities, making it an exciting area of research and innovation.
+   </p>
+   <div class="author-section">
+    <h2>About the Author</h2>
+    <div class="author-info">
+      <img src="img/WhatsApp Image 2024-11-12 at 11.54.36_0eb0d820.jpg" alt="Author's Image" class="author-img">
+      <p><strong>Aanchal Uke</strong>: I am a passionate writer and AI enthusiast. With a background in web development and a keen interest in technology, I enjoy writing about emerging trends in Artificial Intelligence and sharing knowledge with others. My aim is to make complex topics more accessible and exciting for everyone.</p>
+    </div>
+
+   
+
+    <div class="input-section">
+      <h3>Leave a Comment:</h3>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your email">
+      <textarea rows="3" placeholder="Your Comment"></textarea>
+      <button onclick="alert('Comment Submitted!')">Submit</button>
+    </div>
+   </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-container">
+    <!-- Logo and About Section -->
+    <div class="footer-logo">
+      <h4 id="footer-title">Code Kraft</h4>
+      <p id="footer-description">
+        Your go-to platform for programming and tech blogs, courses, and more. We aim to provide high-quality tutorials, real-world coding examples, and tech insights to help you grow as a developer. From web development to machine learning, our content covers a wide range of topics designed for beginners to experts. Join our community and start learning today!
+      </p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+      <h4 style="text-align: center;">Our Services</h4>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">App Development</a></li>
+        <li><a href="#">SEO Services</a></li>
+        <li><a href="#">Consulting</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+        <li><a href="#">Cloud Solutions</a></li>
+        <li><a href="#">UI/UX Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Technology Blogs Section -->
+    <div class="blogs">
+      <h4>Technology Blogs</h4>
+      <ul>
+        <li><a href="#">Latest Trends in AI</a></li>
+        <li><a href="#">Web Development Tips</a></li>
+        <li><a href="#">Cloud Computing 101</a></li>
+        <li><a href="#">Future of Blockchain</a></li>
+        <li><a href="#">Machine Learning for Beginners</a></li>
+        <li><a href="#">Best Programming Languages to Learn</a></li>
+        <li><a href="#">How to Build a Mobile App</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="quick-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us Section -->
+    <div class="follow-us">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Language Selector -->
+  <div class="languages">
+    <label for="language-select">Select Language:</label>
+    <select id="language-select" onchange="changeLanguage()">
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Contact us at: <a href="mailto:codekraft1325@gmail.com">codekraft1325@gmail.com</a></p>
+    <p>Location: Balaghat,M.P</p>
+    <p>&copy; 2025 Code Kraft. All rights reserved.</p>
+
+  </div>
+  
+</footer>
+  <script src="serch.js"></script>
+</body>
+</html>

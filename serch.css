@@ -1,0 +1,47 @@
+/* Fix header at the top */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures header stays above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for header */
+  padding: 10px 30px;
+  background-color: rgb(0, 0, 0);
+
+}
+header h1{
+  color: orange;
+  text-align: center;
+}
+/* Search bar design */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+#searchInput {
+  padding: 9px;
+  width: 250px;
+  border: 1px solid ;
+  border-radius: 4px;
+  text-align: center;
+  color: #f0e3e3;
+  background-color: black;
+}
+
+/* Suggestions list design */
+.suggestions {
+  list-style: none;
+  margin-top: 85px;
+  padding: 10;
+  background: rgb(20, 8, 8);
+  color: rgb(241, 237, 237);
+  border: 1px solid #0d0f0f;
+  width: 250px;
+  position: absolute;
+  z-index: 1001;
+}
+

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: rgb(211, 73, 119);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .services, .portfolio, .testimonials, .faqs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .box i {
+      font-size: 3rem;
+      color: #00f2fe;
+      margin-bottom: 15px;
+    }
+
+    .box h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .box p {
+      color: #555;
+    }
+
+    .cta {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 15px;
+      margin-top: 50px;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00f2fe;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background: #4facfe;
+    }
+
+    .faqs .faq-box {
+      padding: 20px;
+      border: 2px solid #00f2fe;
+      border-radius: 10px;
+      background: #fff;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .faqs .faq-box:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f5;
+      margin-top: 50px;
+    }
+
+    footer p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    footer a {
+      color: #00f2fe;
+      text-decoration: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 40px 15px;
+      }
+
+      .box {
+        padding: 15px;
+      }
+
+      .cta h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta a {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Explore My Technical Expertise</h1>
+    <p>I provide hands-on insights into technical courses and real-world project implementation to help learners and professionals succeed in their technical journeys.</p>
+  </header>
+
+  <!-- Services Section -->
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="box">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Course Reviews</h3>
+        <p>In-depth reviews of popular courses like Python, Data Science, and Web Development.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-project-diagram"></i>
+        <h3>Real-Life Project Walkthroughs</h3>
+        <p>Step-by-step guides on real-world projects for hands-on experience.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Mentorship</h3>
+        <p>1-on-1 guidance for mastering technical skills and achieving goals.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-tools"></i>
+        <h3>Technical Consulting</h3>
+        <p>Professional advice on project setup, tool selection, and career growth.</p>
+      </div>
+      <!-- Added 2 More Boxes -->
+      <div class="box">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Building responsive and modern websites using the latest technologies.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-database"></i>
+        <h3>Database Solutions</h3>
+        <p>Providing efficient database solutions for optimized performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section>
+    <h2>Showcasing My Work</h2>
+    <div class="portfolio">
+      <div class="box">
+        <i class="fas fa-code"></i>
+        <h3>Flask Web App</h3>
+        <p>A Flask-based web app built for e-commerce. Tools: Python, Flask, SQLite.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-database"></i>
+        <h3>Data Analysis Project</h3>
+        <p>Analyzed large datasets using Python and Pandas to uncover trends.</p>
+      </div>
+      <!-- Added 2 More Boxes -->
+      <div class="box">
+        <i class="fas fa-cloud"></i>
+        <h3>Cloud Solution</h3>
+        <p>Developed a scalable cloud solution using AWS services.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile App</h3>
+        <p>Created a mobile app using React Native for seamless cross-platform experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section>
+    <h2>What People Say</h2>
+    <div class="testimonials">
+      <div class="box">
+        <p>"Your guide on Flask-based web apps helped me create my first project!"</p>
+        <h3>- John Doe</h3>
+      </div>
+      <!-- Added 1 More Testimonial -->
+      <div class="box">
+        <p>"The mentorship session helped me understand web development deeply!"</p>
+        <h3>- Jane Smith</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section>
+    <h2>FAQs</h2>
+    <div class="faqs">
+      <!-- Added 5 FAQ Items -->
+      <div class="faq-box">
+        <h3>What kind of projects do you share?</h3>
+        <p>Real-world projects with detailed steps and technologies used.</p>
+      </div>
+      <div class="faq-box">
+        <h3>Do you offer one-on-one mentorship?</h3>
+        <p>Yes, I provide 1-on-1 mentorship tailored to your learning goals.</p>
+      </div>
+      <div class="faq-box">
+        <h3>How do I get started with your courses?</h3>
+        <p>You can start by exploring my course reviews and selecting the best one for you.</p>
+      </div>
+      <div class="faq-box">
+        <h3>What technologies do you teach?</h3>
+        <p>I teach technologies like Python, Flask, JavaScript, and more.</p>
+      </div>
+      <div class="faq-box">
+        <h3>Can I consult you for project setup?</h3>
+        <p>Yes, I offer professional consulting for project setup and tool selection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Get Started Today!</h2>
+    <p>Contact me to begin your journey into the world of technical learning and development.</p>
+    <a href="mailto:contact@example.com">Reach Out</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CodeCraft. All Rights Reserved.</p>
+    <p>Visit <a href="https://logicnest.netlify.app">LogicNest</a> for more resources.</p>
+  </footer>
+</body>
+</html>

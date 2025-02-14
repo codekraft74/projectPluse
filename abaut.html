@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background-color: rgb(241, 120, 138);
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 20px;
+    }
+
+    h1, h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: white;
+      text-align: center;
+      margin: 20px 0;
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Mission Statement */
+    .mission {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .mission .content {
+      flex: 1;
+      text-align: left;
+      margin: 0 20px;
+      animation: slideInLeft 1s ease-out;
+    }
+
+    .mission i {
+      font-size: 4rem;
+      color: rgb(0, 242, 254);
+      margin-bottom: 10px;
+    }
+
+    .mission h3 {
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    /* About the Founder */
+    .founder {
+      background: rgb(255, 255, 255);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 40px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .founder img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .founder h3 {
+      font-size: 1.8rem;
+      color: red;
+      margin-bottom: 10px;
+    }
+    .founder p{
+      color: black;
+    }
+    /* Impact Section */
+    .impact {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      animation: slideInUp 1s ease-out;
+    }
+
+    .impact .box {
+      background: rgb(255, 255, 255);
+      padding: 30px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin: 20px;
+      animation: bounce 1s ease-in-out;
+    }
+.box p{
+  color: black;
+}
+    .impact i {
+      font-size: 3rem;
+      color: rgb(0, 242, 254);
+      margin-bottom: 15px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: rgb(207, 167, 167);
+      color: rgb(255, 255, 255);
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+      border-radius: 10px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .contact a {
+      background: rgb(236, 158, 213);
+      padding: 12px 30px;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background: rgb(79, 172, 254);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .mission {
+        flex-direction: column;
+      }
+
+      .impact {
+        flex-direction: column;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Contact Us Section Styling */
+.contact-us {
+  background: rgb(56, 56, 56);
+  background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(0, 150, 136, 1) 100%);
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-group label {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #00bcd4;
+}
+
+.input-group textarea {
+  height: 150px;
+  resize: none;
+}
+
+.submit-btn {
+  background: #00bcd4;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0097a7;
+  transform: scale(1.1);
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-us {
+    padding: 30px 15px;
+  }
+
+  .contact-us h2 {
+    font-size: 2rem;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- About Us Section -->
+    <section>
+      <h1>About Us</h1>
+      <p>Welcome to [Blog Name]. We are dedicated to bringing you the latest and greatest in [your niche]. Our mission is to simplify complex topics and make them accessible to everyone.</p>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission">
+      <div class="content">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Our Mission</h3>
+        <p>At [Blog Name], our goal is to empower readers with knowledge and real-world insights to help them succeed in their technical journeys.</p>
+      </div>
+      <div class="content">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Our Vision</h3>
+        <p>We strive to become the leading resource for learners and professionals in the tech space, offering valuable content that helps them grow and innovate.</p>
+      </div>
+    </section>
+<!-- Awards and Recognition Section -->
+<section class="awards">
+  <h2>Awards and Recognition</h2>
+  <ul>
+    <li><i class="fas fa-trophy"></i> Best Educational Blog 2023</li>
+    <li><i class="fas fa-trophy"></i> Top 10 Tech Websites by [Magazine]</li>
+    <li><i class="fas fa-trophy"></i> Featured in [Tech Conference/Event]</li>
+  </ul>
+</section>
+
+<!-- Our Values Section -->
+<section class="values">
+  <h2>Our Values</h2>
+  <ul>
+    <li><i class="fas fa-heart"></i> Passion for Learning</li>
+    <li><i class="fas fa-users"></i> Community Engagement</li>
+    <li><i class="fas fa-rocket"></i> Continuous Growth</li>
+    <li><i class="fas fa-balance-scale"></i> Integrity and Honesty</li>
+  </ul>
+</section>
+
+
+<!-- Our Story Section -->
+<section class="story">
+  <h2>Our Story</h2>
+  <p>Our journey began in [Year] with a simple idea to make technology and coding more accessible to everyone. Since then, we have helped thousands of learners and professionals enhance their skills.</p>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="choose-us">
+  <h2>Why Choose Us?</h2>
+  <ul>
+    <li><i class="fas fa-check-circle"></i> High-Quality Content with Detailed Examples</li>
+    <li><i class="fas fa-check-circle"></i> Regular Updates and Latest Trends</li>
+    <li><i class="fas fa-check-circle"></i> Step-by-Step Tutorials for Beginners to Experts</li>
+    <li><i class="fas fa-check-circle"></i> Free Access to Premium Resources</li>
+  </ul>
+</section>
+
+  
+   
+    <!-- Impact Section -->
+    <section class="impact">
+      <div class="box">
+        <i class="fas fa-users"></i>
+        <h4>50k+ Subscribers</h4>
+        <p>Join a growing community of learners and professionals from around the world.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-check-circle"></i>
+        <h4>Proven Results</h4>
+        <p>Our tutorials have helped thousands land jobs and improve their skills in [field].</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-star"></i>
+        <h4>Expert Advice</h4>
+        <p>Benefit from tips and insights from industry experts and experienced professionals.</p>
+      </div>
+    </section>
+<!-- Blog Highlights Section -->
+<section class="blog-highlights">
+  <h2>Latest Blog Posts</h2>
+  <div class="blog-post">
+    <h3><a href="#">How to Get Started with Python for Web Development</a></h3>
+    <p>Learn how to kickstart your journey in web development using Python and Flask...</p>
+  </div>
+  <div class="blog-post">
+    <h3><a href="#">Top 10 Data Science Projects for Beginners</a></h3>
+    <p>Check out these exciting data science projects that you can build with Python...</p>
+  </div>
+</section>
+<!-- CTA Section -->
+<section class="cta">
+  <h2>Start Your Learning Journey Today</h2>
+  <p>Sign up to receive expert tutorials and project walkthroughs straight to your inbox!</p>
+  <a href="#" class="cta-button">Subscribe Now</a>
+</section>
+
+    <!-- Contact Section -->
+   <!-- Contact Us Section -->
+<!-- Contact Us Section -->
+<section class="contact-us">
+  <h2>Contact Us</h2>
+  <form action="#" method="POST">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="input-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</section>
+
+  </div>
+
+</body>
+</html>

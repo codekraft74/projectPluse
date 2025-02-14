@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Logo and Search Bar</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="pro.css">
+</head>
+</head>
+<div class="top-bar">
+  <!-- Logo (left) -->
+  <div class="logo">
+    <img src="img/apple-touch-icon.png" alt="Logo"> <!-- Replace with your logo URL -->
+  </div>
+
+  <!-- Search bar (centered) -->
+  <div class="search-container">
+    <input type="text" placeholder="Search...">
+    <button>Go</button>
+  </div>
+</div>
+  <header>
+    <nav>
+      <!-- Logo -->
+      <div>
+      <!-- Navigation Menu -->
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="abaut.html">About</a></li>
+        <li><a href="servise.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Search Bar -->
+      
+      </div>
+
+    </nav>
+    <div class="btn">
+    <button onclick="more()" >More</button>
+  </div>
+  </header>
+
+  <section class="intro">
+    <div class="container">
+        <h1>Welcome to Code Kraft!</h1>
+        <p>Welcome to Code Kraft, the ultimate hub for coding enthusiasts and tech explorers! At Code Kraft, we blend cutting-edge technology with real-world applications, providing you with technical blogs and hands-on projects that can shape your career. From machine learning to full-stack development, our content is crafted to inspire and elevate your skills. With every post, we aim to help you solve real-life challenges and keep you ahead in the tech world. Join us at Code Kraft and start building the future, one line of code at a time!</p>
+    </div>
+</section>
+  <!-- Popular Topics -->
+  <section class="section" id="popular-topics">
+    <h2>Popular Topics</h2>
+    <div class="tag-cloud">
+        <span>Machine Learning</span>
+        <span>JavaScript</span>
+        <span>Web Development</span>
+        <span onclick="location.href='more.html'">AI Trends</span>
+        <span>Programming Tips</span>
+    </div>
+</section>
+<!--PROJECTS-->
+<div class="wrapper" onclick="url()">
+  <h1>From Ideas to Reality</h1>
+  <div class="container">
+      <div class="project">
+          <img src="https://www.tinkercoders.com/wp-content/uploads/2024/04/MicrosoftTeams-image-1536x997.jpg" alt="Project 1">
+          <h2>LogicNest</h2>
+          <p><strong>LogicNest</strong> is an online platform offering courses on various programming languages with real-world examples. It helps learners improve their coding skills through hands-on practice and a dedicated blog section.</p>      
+      </div>
+     
+  </div>
+</div>
+
+
+<section id="featured-blogs">
+  <h2>Featured Blogs</h2>
+
+  <!-- Blog 1: Image on the left, text below -->
+  <div class="blog-card">
+    <img src="img/ml.jpeg" alt="Blog 1">
+    <div class="blog-card-content">
+      <h4 style="text-align: left;">Introduction to Machine Learning</h4>
+      <p>Explore the basics of machine learning and its applications in today's world.</p>    </div>
+  </div>
+
+  <!-- Blog 2: Image on the right, text below -->
+  <div class="blog-card1">
+    <img src="img/js.webp" alt="Blog 2">
+    <div class="blog-card-content">
+      <h4 style="text-align: right;">Top 10 JavaScript Libraries</h4>
+      <p>Discover the most popular JavaScript libraries for modern web development.</p>
+    </div>
+  </div>
+
+
+<!-- Blog 3: AI & Machine Learning Trends -->
+<div class="blog-card">
+  <img src="img/aiml.jpeg" alt="Blog 3">
+  <div class="blog-card-content">
+    <h4>AI & Machine Learning Trends</h4>
+    <p>Discover how AI is transforming daily life and industries with cutting-edge solutions.</p>
+  </div>
+</div>
+
+<!-- Blog 4: Blockchain Aur Web3 -->
+<div class="blog-card1">
+  <img src="img/web.jpeg" alt="Blog 4">
+  <div class="blog-card-content">
+    <h4 style="text-align: right;">Blockchain Aur Web3</h4>
+    <p >Explore blockchain applications and future possibilities of Web3 technology.</p>
+  </div>
+</div>
+
+<!-- Blog 5: Cybersecurity Tips -->
+<div class="blog-card">
+  <img src="img/cyber.jpeg" alt="Blog 5">
+  <div class="blog-card-content">
+    <h4>Cybersecurity Tips</h4>
+    <p>Learn how to protect your data and maintain online privacy effectively.</p>
+  </div>
+</div>
+
+<!-- Blog 6: Gadgets Reviews & Comparisons -->
+<div class="blog-card1">
+  <img src="img/gadget.jpeg" alt="Blog 6">
+  <div class="blog-card-content">
+    <h4 style="text-align: right;">Gadget Reviews & Comparisons</h4>
+    <p>Get detailed reviews and comparisons of the latest gadgets and devices.</p>
+  </div>
+</div>
+
+<!-- Blog 7: Coding & Development Tips -->
+<div class="blog-card">
+  <img src="img/compu.jpeg" alt="Blog 7">
+  <div class="blog-card-content">
+    <h4>Coding & Development Tips</h4>
+    <p>Master best practices and explore beginner-friendly coding tutorials.</p>
+  </div>
+</div>
+
+<!-- Blog 8: Cloud Computing Trends -->
+<div class="blog-card1">
+  <img src="img/cloud.jpeg" alt="Blog 6">
+  <div class="blog-card-content">
+    <h4 style="text-align: right;">Cloud Computing Trends</h4>
+    <p>Stay updated with AWS, Azure, and Google Cloud advancements.</p>
+  </div>
+</div>
+
+<!-- Blog 9: 5G Technology -->
+<div class="blog-card">
+  <img src="img/5g.jpg" alt="Blog 7">
+  <div class="blog-card-content">
+    <h4>5G Technology</h4>
+    <p>Discover the potential impact and use-cases of 5G networks.</p>
+  </div>
+</div>
+
+<!-- Blog 10: Tech for Sustainability -->
+<div class="blog-card1">
+  <img src="img/grren.jpeg" alt="Blog 8">
+  <div class="blog-card-content">
+    <h4 style="text-align: right;">Tech for Sustainability</h4>
+    <p>Explore green technology innovations for a more sustainable future.</p>
+  </div>
+</div>
+
+<!-- Blog 11: Future Tech Innovations -->
+<div class="blog-card">
+  <img src="img/futer.png" alt="Blog 9">
+  <div class="blog-card-content">
+    <h4>Future Tech Innovations</h4>
+    <p>Dive into robotics, AR/VR, and Metaverse possibilities.</p>
+  </div>
+</div>
+
+<!-- Blog 12: Startup Tech Solutions -->
+<div class="blog-card1">
+  <img src="img/sas.jpeg" alt="Blog 10">
+  <div class="blog-card-content">
+    <h4 style="text-align: right;">Startup Tech Solutions</h4>
+    <p>Discover SaaS tools and automation tech for startups.</p>
+  </div>
+</div>
+
+</section>
+ <!-- Blog Ratings -->
+<!-- Blog Ratings -->
+<!-- Blog Ratings -->
+<section class="section" id="ratings">
+  <h2>Blog Ratings</h2>
+  <p>We value your feedback! Rate this blog to help others know what to expect. Your opinion matters to us.</p>
+  <div class="rating-container">
+      <div class="rating">
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9734;</span>
+      </div>
+  </div>
+  <p>Rated 4/5 based on 25 reviews. Join the discussion and share your thoughts in the comments below!</p>
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <h4>Leave a Comment</h4>
+    <textarea placeholder="Write your comment here..." rows="4"></textarea>
+    <br>
+    <button type="button">Submit Comment</button>
+
+    <!-- Existing Comments Display -->
+    <div class="existing-comments">
+      <h4>User Comments:</h4>
+      <ul>
+        <li><strong>John:</strong> Great insights! Learned a lot from this blog.</li>
+        <li><strong>Mary:</strong> Please cover more on JavaScript frameworks next time!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Related Posts Section -->
+  
+  <!-- Call to Action Section -->
+  <div class="cta">
+    <h4>Subscribe for More Updates</h4>
+    <p>Stay updated with the latest in technology and development trends.</p>
+    <button type="button">Subscribe Now</button>
+  </div>
+
+  <!-- Author Bio Section -->
+  <div class="author-bio">
+    <h4>About the Author</h4>
+    <p>Aanchal Uke is a software development enthusiast with a passion for building innovative solutions and exploring emerging technologies in the software industry.</p>
+  </div>
+</section>
+
+<section class="section" id="animations">
+  <h2>Interactive Animations</h2>
+  <p>Experience smooth transitions, engaging animations, and iconic interactions while exploring our website!</p>
+
+  <div class="animation-container">
+    <!-- Hover to Expand Box -->
+    <div class="animation-box hover-expand">
+      <i class="fas fa-expand-arrows-alt"></i>
+      <h2>Hover to Expand</h2>
+      <p>This box expands when you hover over it. Try it!</p>
+    </div>
+
+    <!-- Click to Rotate Box -->
+    <div class="animation-box click-rotate">
+      <i class="fas fa-sync-alt"></i>
+      <h2>Click to Rotate</h2>
+      <p>Click the box to see it rotate. It's fun to interact with!</p>
+    </div>
+
+   
+  </div>
+</section>
+  <!-- Custom Recommendations -->
+  <section class="section" id="recommendations">
+    <h2>Recommended for You</h2>
+    <p>Based on your interest in web development, check out our latest tutorials and tips!</p>
+</section>
+<!-- Blog Schedule -->
+<section class="section" id="blog-schedule">
+  <h2>Upcoming Blogs</h2>
+  <p>Stay tuned! Our next blog on <strong>"Future of AI"</strong> is coming soon!</p>
+  <div class="schedule-list">
+      <ul>
+          <li><span class="date">February 2025:</span> Understanding AI Algorithms</li>
+          <li><span class="date">March 2025:</span> Deep Dive into Machine Learning</li>
+          <li><span class="date">April 2025:</span> The Future of Web Development</li>
+      </ul>
+  </div>
+</section>
+<!-- FAQs -->
+<section class="section" id="faqs">
+  <h2>FAQs</h2>
+  <div class="faq-item">
+      <h4>Can I submit a guest blog?</h4>
+      <p>Yes, you can submit your blog for review.</p>
+  </div>
+  <div class="faq-item">
+      <h4>How to subscribe to blogs?</h4>
+      <p>Enter your email in the subscription form to get updates.</p>
+  </div>
+</section>
+<section class="section" id="guest-blogging">
+  <h2>Guest Blogging</h2>
+  <p>Have something to share? Submit your guest blog here!</p>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <!-- Logo and About Section -->
+    <div class="footer-logo">
+      <h4 id="footer-title">Code Kraft</h4>
+      <p id="footer-description">
+        Your go-to platform for programming and tech blogs, courses, and more. We aim to provide high-quality tutorials, real-world coding examples, and tech insights to help you grow as a developer. From web development to machine learning, our content covers a wide range of topics designed for beginners to experts. Join our community and start learning today!
+      </p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+      <h4 style="text-align: center;">Our Services</h4>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">App Development</a></li>
+        <li><a href="#">SEO Services</a></li>
+        <li><a href="#">Consulting</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+        <li><a href="#">Cloud Solutions</a></li>
+        <li><a href="#">UI/UX Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Technology Blogs Section -->
+    <div class="blogs">
+      <h4>Technology Blogs</h4>
+      <ul>
+        <li><a href="#">Latest Trends in AI</a></li>
+        <li><a href="#">Web Development Tips</a></li>
+        <li><a href="#">Cloud Computing 101</a></li>
+        <li><a href="#">Future of Blockchain</a></li>
+        <li><a href="#">Machine Learning for Beginners</a></li>
+        <li><a href="#">Best Programming Languages to Learn</a></li>
+        <li><a href="#">How to Build a Mobile App</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="quick-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us Section -->
+    <div class="follow-us">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Language Selector -->
+  <div class="languages">
+    <label for="language-select">Select Language:</label>
+    <select id="language-select" onchange="changeLanguage()">
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Contact us at: <a href="mailto:codekraft1325@gmail.com">codekraft1325@gmail.com</a></p>
+    <p>Location: Balaghat,M.P</p>
+    <p>&copy; 2025 Code Kraft. All rights reserved.</p>
+
+  </div>
+  
+</footer>
+
+
+<script>
+  function changeLanguage() {
+      var language = document.getElementById("language-select").value;
+
+      if (language === "hindi") {
+          document.getElementById("footer-title").innerHTML = "कोड क्राफ्ट";
+          document.getElementById("footer-description").innerHTML = "आपका पसंदीदा प्लेटफ़ॉर्म प्रोग्रामिंग और टेक ब्लॉग, कोर्स और अधिक के लिए।";
+      } else {
+          document.getElementById("footer-title").innerHTML = "Code Kraft";
+          document.getElementById("footer-description").innerHTML = "Your go-to platform for programming and tech blogs, courses, and more.";
+      }
+  }
+</script>
+
+<script>
+  function more(){
+    window.location.href="cont.html";
+  }
+  function url(){
+    window.location.href="https://logicnest.netlify.app/";
+  }
+</script>
+</body>
+</html>

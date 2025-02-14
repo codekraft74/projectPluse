@@ -1,0 +1,156 @@
+/* Footer Styling */
+footer {
+    background-color: black;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 40px 20px;
+
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-logo {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  #footer-title {
+    font-size: 2rem;
+    color: #00bcd4;
+    font-weight: bold;
+  }
+  
+  #footer-description {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  #footer-description a {
+    color: #00bcd4;
+    text-decoration: none;
+  }
+  
+  #footer-description a:hover {
+    text-decoration: underline;
+  }
+  
+  .services, .blogs, .follow-us {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  h4, h3 {
+    color: #00bcd4;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  ul li a i {
+    margin-right: 10px;
+    color: #00bcd4;
+  }
+  
+  ul li a:hover {
+    color: #00bcd4;
+  }
+  
+  .social-icons a {
+    color: #ddd;
+    font-size: 1.8rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #00bcd4;
+  }
+  
+  .languages {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .languages select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid #00bcd4;
+    background-color: #282c34;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .languages select:focus {
+    border-color: #00bcd4;
+  }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #bbb;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .services, .blogs, .quick-links {
+      margin-bottom: 20px;
+    }
+  
+    .languages select {
+      width: 100%;
+    }
+  }
+  
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: hsl(0, 21%, 92%);
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+    color: white;
+  }
+  
+  .footer-bottom a {
+    color: #00bcd4;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+  
