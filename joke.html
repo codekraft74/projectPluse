@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 94vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            border: 2px solid hotpink;
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .main{
+            padding: 20px;
+        }
+        .h{
+            padding: 30px;
+            border: 1px solid black;
+        }
+        #joke {
+            font-size: 24px; /* यहां अपनी पसंद का साइज दें */
+            font-weight: bold; /* टेक्स्ट को मोटा करने के लिए */
+            color: #333; /* टेक्स्ट कलर */
+        }
+        
+        button {
+            padding: 10px 16px;
+            font-size: 16px;
+            border: none;
+            background: #ff5733;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 8px 4px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #c70039;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ff5733;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .saved-jokes li {
+            background: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background: red;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .delete-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>😂 Hindi & English Joke Generator</h1>
+        <div class="main">
+            <div class="h">
+        <p id="joke">Press a button to get a joke!</p>
+        <div class="loader" id="jokeLoader"></div>
+    </div>
+    </div>
+        <button onclick="fetchHindiJoke()">Hindi</button>
+        <button onclick="fetchAIJoke()">English</button>
+        <button onclick="copyJoke()">Copy</button>
+        <button onclick="shareOnWhatsApp()">Share</button>
+        <button onclick="saveJoke()">Save</button>
+        <h2>Saved jokes:</h2>
+        <ul class="saved-jokes" id="savedJokes"></ul>
+    </div>
+
+    <footer style="background: #333; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2025 Joke Generator | Made with ❤️ by Code Kraft</p>
+    </footer>
+
+   
+      
+
+    <script>
+        function fetchHindiJoke() {
+            fetchJoke("https://hindi-jokes-api.onrender.com/jokes?category=random&api_key=491ef8f2798ed66d8599113e6873");
+        }
+
+        function fetchAIJoke() {
+            fetchJoke("https://v2.jokeapi.dev/joke/Any?format=json");
+        }
+
+        function fetchJoke(apiUrl) {
+            document.getElementById('jokeLoader').style.display = 'block';
+            document.getElementById('joke').style.display = 'none';
+            
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('jokeLoader').style.display = 'none';
+                    document.getElementById('joke').style.display = 'block';
+                    
+                    let jokeText = data.jokeContent || data.joke || `${data.setup} - ${data.delivery}`;
+                    document.getElementById('joke').innerText = jokeText;
+                })
+                .catch(() => {
+                    document.getElementById('jokeLoader').style.display = 'none';
+                    document.getElementById('joke').innerText = "Error fetching joke!";
+                });
+        }
+
+        function copyJoke() {
+            const jokeText = document.getElementById('joke').innerText;
+            navigator.clipboard.writeText(jokeText).then(() => {
+                alert("Joke copied to clipboard!");
+            });
+        }
+
+        function shareOnWhatsApp() {
+            const jokeText = document.getElementById('joke').innerText;
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(jokeText)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function saveJoke() {
+            let jokeText = document.getElementById('joke').innerText;
+            let jokes = JSON.parse(localStorage.getItem("jokes")) || [];
+
+            if (!jokes.includes(jokeText)) {
+                if (jokes.length >= 10) {
+                    jokes.shift();
+                }
+                jokes.push(jokeText);
+                localStorage.setItem("jokes", JSON.stringify(jokes));
+                displaySavedJokes();
+            } else {
+                alert("This joke is already saved!");
+            }
+        }
+
+        function deleteJoke(index) {
+            let jokes = JSON.parse(localStorage.getItem("jokes")) || [];
+            jokes.splice(index, 1);
+            localStorage.setItem("jokes", JSON.stringify(jokes));
+            displaySavedJokes();
+        }
+
+        function displaySavedJokes() {
+            let jokes = JSON.parse(localStorage.getItem("jokes")) || [];
+            document.getElementById("savedJokes").innerHTML = jokes.map((joke, index) => 
+                `<li>${joke} <button class='delete-btn' onclick='deleteJoke(${index})'>Delete</button></li>`
+            ).join(" ");
+        }
+
+        displaySavedJokes();
+    </script>
+</body>
+</html>

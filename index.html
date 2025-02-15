@@ -62,13 +62,20 @@
     </div>
 </section>
 <!--PROJECTS-->
-<div class="wrapper" onclick="url()">
-  <h1>From Ideas to Reality</h1>
+<div class="wrapper">
+  <h1>From Ideas to Reality </h1>
+  <h2>projects</h2>
   <div class="container">
-      <div class="project">
+      <div class="project"  onclick="url()">
           <img src="https://www.tinkercoders.com/wp-content/uploads/2024/04/MicrosoftTeams-image-1536x997.jpg" alt="Project 1">
           <h2>LogicNest</h2>
           <p><strong>LogicNest</strong> is an online platform offering courses on various programming languages with real-world examples. It helps learners improve their coding skills through hands-on practice and a dedicated blog section.</p>      
+      </div>
+
+      <div class="project" onclick="joke()">
+          <img src="https://img.freepik.com/free-vector/april-fools-day_24908-58355.jpg?ga=GA1.1.37085080.1733852952&semt=ais_hybrid" alt="Project 1">
+          <h2>Joke Generator</h2>
+          <p>Enjoy unlimited fun with our<strong>Joke Generator!</strong> Get hilarious Hindi and English jokes at the click of a button. Share, save, and laugh anytime, anywhere! 😆🎭</p>      
       </div>
      
   </div>
@@ -397,6 +404,11 @@
   function url(){
     window.location.href="https://logicnest.netlify.app/";
   }
+  
+  function joke(){
+    window.location.href="joke.html";
+  }
+
 </script>
 </body>
 </html>
