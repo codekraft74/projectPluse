@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
   <title>ProjectPluse - Free Coding Blogs & Projects</title>
 
   <!-- SEO Meta Tags -->
@@ -39,7 +39,7 @@
  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Website",
+    "@type": "EducationalOrganization",
     "name": "ProjectPluse",
     "url": "https://projectpluse.netlify.app/",
     "description": "ProjectPluse पर आपको Coding से जुड़े Free Blogs, Real-Life Projects और High-Quality Courses मिलेंगे।",
@@ -47,9 +47,21 @@
         "@type": "Organization",
         "name": "ProjectPluse",
         "logo": "https://projectpluse.netlify.app/favicon-32x32.png"
+    },
+    "offers": {
+        "@type": "Course",
+        "name": "Full-Stack Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "ProjectPluse"
+        }
     }
-}
+  }
+  
 </script>
+
+   
+
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -57,7 +69,7 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="pro.css">
 </head>
-</head>
+
 <div class="top-bar">
   <!-- Logo (left) -->
   <div class="logo">
@@ -66,10 +78,42 @@
 
   <!-- Search bar (centered) -->
   <div class="search-container">
-    <input type="text" placeholder="Search...">
-    <button>Go</button>
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="showSuggestions()">
+    <button type="submit" onclick="searchProject()">Go</button>
+    <ul id="suggestions"></ul>
+
   </div>
 </div>
+<style>
+ 
+#suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;  /* इनपुट बॉक्स के ठीक नीचे */
+    left: 0;
+    width: 200px; /* पूरी चौड़ाई लेगा */
+    background: white;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+
+</style>
   <header>
     <nav>
       <!-- Logo -->
@@ -431,6 +475,70 @@
 <script src="head.js"></script>
 
 <script>
+  
+    // Projects Data
+    const projects = [
+        { id: "ai", name: "AI Trends", url: "more.html" },
+        { id: "logic", name: "LogicNest", url: "https://logicnest.netlify.app/" },
+        { id: "joke", name: "Joke Generator", url: "joke.html" }
+    ];
+
+    // Show suggestions when typing
+    function showSuggestions() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let suggestionBox = document.getElementById("suggestions");
+        suggestionBox.innerHTML = "";
+
+        if (input === "") {
+            suggestionBox.style.display = "none";
+            return;
+        }
+
+        let matches = projects.filter(project => 
+            project.name.toLowerCase().includes(input) || 
+            project.id.includes(input) ||
+            project.url.includes(input)
+        );
+
+        if (matches.length > 0) {
+            suggestionBox.style.display = "block";
+            matches.forEach(match => {
+                let listItem = document.createElement("li");
+                listItem.textContent = match.name;
+                listItem.onclick = function() {
+                    document.getElementById("searchInput").value = match.name;
+                    suggestionBox.style.display = "none";
+                };
+                suggestionBox.appendChild(listItem);
+            });
+        } else {
+            suggestionBox.style.display = "none";
+        }
+    }
+
+    // Search function (Redirect only on Go button click)
+    function searchProject() {
+        let query = document.getElementById("searchInput").value.toLowerCase();
+        
+        if (query === "") {
+            alert("Please enter something to search!");
+            return;
+        }
+
+        let result = projects.find(project => 
+            project.id === query || 
+            project.name.toLowerCase() === query || 
+            project.url.includes(query)
+        );
+
+        if (result) {
+            window.location.href = result.url;
+        } else {
+            alert("No matching project found!");
+        }
+    }
+
+
   function changeLanguage() {
       var language = document.getElementById("language-select").value;
 

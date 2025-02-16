@@ -29,12 +29,14 @@ flex: 1; /* Ensures the logo stays on the left */
 .logo h1{
     color: black;
 }
-/* Search container styling (center on all screens) */
+
 .search-container {
-flex: 2; /* Center the search bar by allowing it to take more space */
+flex: 2; 
 display: flex;
-justify-content: center; /* Align search bar in the center */
+justify-content: center; 
+
 }
+
 
 .search-container input {
 height: 35px;
@@ -43,9 +45,11 @@ border-radius: 5px;
 border: 1px solid #ccc;
 outline: none;
 font-size: 16px;
-width: 70%; /* Default input width */
-max-width: 400px; /* Prevent search bar from becoming too wide */
+width: 70%; 
+max-width: 400px; 
+color: black;
 }
+
 
 .search-container button {
 height: 35px;
