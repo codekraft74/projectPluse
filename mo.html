@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More | Explore More</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #FFC0CB, #FF69B4);            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+         h2{
+            font-size: 30px;
+            padding-top: 20px;
+        }
+
+        /* Card Layout */
+        .project-list, .blog-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 20px;
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 0 10px;
+            height: 60px;
+        }
+
+        .card a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #005bb5;
+        }
+        button{
+            margin-top: 35px;
+            background-color: rgb(233, 65, 115);
+            height: 4vh;
+            width: 90px;
+            border: 1px solid;
+            border-radius: 40px;
+            color: white;
+            font-size: 15px;
+        }
+        button:hover{
+            background-color: red;
+            color: black;
+        }
+
+        /* Footer */
+        footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Explore More - Real Life Projects & Technical Blogs
+    </header>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <h2>Real-Life Projects</h2>
+        <div class="project-list">
+            <div class="card">
+                <img src="https://www.tinkercoders.com/wp-content/uploads/2024/04/MicrosoftTeams-image-1536x997.jpg" alt="Project 1">
+                <h3>LogicNest</h3>
+                <p><strong>LogicNest</strong> is an online platform offering courses on various programming languages with real-world examples. It helps learners improve their coding skills through hands-on practice and a dedicated blog section.</p>      
+                <button onclick="location.href='https://logicnest.netlify.app/';">Click Me</button>
+            </div>
+    
+            <div class="card">
+                <img src="https://img.freepik.com/free-vector/april-fools-day_24908-58355.jpg?ga=GA1.1.37085080.1733852952&semt=ais_hybrid" alt="Project 1">
+                <h3>Joke Generator</h3>
+                <p>Enjoy unlimited fun with our<strong>Joke Generator!</strong> Get hilarious Hindi and English jokes at the click of a button. Share, save, and laugh anytime, anywhere! 😆🎭</p>      
+                <button onclick="window.location.href='joke.html';">Click Me</button>
+            </div>
+
+
+
+            <div class="card" >
+                <img src="https://plus.unsplash.com/premium_photo-1725985758256-2b311864d1ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cXVvdGUlMjBnZW5lcmF0b3J8ZW58MHx8MHx8fDA%3D" alt="Project 1">
+                  <h2>Quote Generator</h2>
+                  <p>Get inspired with random quotes every time you click! Explore wisdom, motivation, and creativity in just one tap.</p>
+                <button onclick="window.location.href='quote.html';" id="quote">Click Me</button>
+                </div>
+             
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="blogs">
+        <h2>Technical Blogs</h2>
+        <div class="blog-list">
+            <div class="card">
+                <img src="img/ai.jpeg" alt="Blog Image">
+                <h3>AI Trends</h3>
+                <p>AI enables machines to mimic human intelligence, learning, reasoning, and decision-making. It is used in healthcare, finance, and automation, evolving with machine learning and neural networks.</p>
+                <button onclick="window.location.href='more.html'">Click Me</button>
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 ProjectPluse | All Rights Reserved
+    </footer>
+
+</body>
+</html>

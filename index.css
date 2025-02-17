@@ -496,103 +496,97 @@ align-self: flex-end;
 /* 4*/
 /* Section Style */
 
-/* Section Style */
-#ratings {
-padding: 60px 20px;
-background-color: #da98b7;
-text-align: center;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.container_r {
+  width: 100%;
+  background-color: #e44776;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
-#ratings h2 {
-font-size: 36px;
-color: #333;
-margin-bottom: 30px;
-font-family: 'Arial', sans-serif;
-font-weight: 600;
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-/* Rating Container */
-.rating-container {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 10px;
-margin-bottom: 20px;
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 0;
 }
 
-/* Individual Star Styling */
-.rating {
-font-size: 40px;
-color: #e4e4e4; /* Light grey color for inactive stars */
-cursor: pointer;
-transition: transform 0.3s ease, color 0.3s ease;
+.star {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
-.rating span:hover {
-transform: scale(1.2);
-color: #fbc02d; /* Yellow color on hover */
+.star:hover,
+.star.active {
+  color: gold;
+  transform: scale(1.2);
+  text-shadow: 0 0 15px rgba(255, 223, 0, 0.7);
 }
 
-/* Active Stars */
-.rating span.active {
-color: #fbc02d; /* Yellow color for active stars */
+.rating-text {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
 }
 
-/* Description Text Styling */
-#ratings p {
-font-size: 16px;
-color: #555;
-line-height: 1.5;
-max-width: 600px;
-margin: 0 auto;
-font-family: 'Arial', sans-serif;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-/* Animation for hover effect */
-@keyframes pulse {
-0% {
-transform: scale(1);
-}
-50% {
-transform: scale(1.2);
-}
-100% {
-transform: scale(1);
-}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-.rating span:hover {
-animation: pulse 0.6s ease-out;
+input:focus, textarea:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-#ratings h2 {
-font-size: 28px;
+textarea {
+  resize: none;
+  height: 80px;
 }
 
-.rating {
-font-size: 30px;
+button {
+  background: gold;
+  color: black;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#ratings p {
-font-size: 14px;
+button:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
 }
-}
-
-@media (max-width: 480px) {
-.rating-container {
-flex-wrap: wrap;
-justify-content: space-around;
-}
-
-.rating {
-font-size: 30px;
-margin-bottom: 10px;
-}
-}
-
 /* General styling */
 
 

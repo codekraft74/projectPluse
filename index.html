@@ -169,6 +169,12 @@
           <p>Enjoy unlimited fun with our<strong>Joke Generator!</strong> Get hilarious Hindi and English jokes at the click of a button. Share, save, and laugh anytime, anywhere! 😆🎭</p>      
       </div>
      
+      <div class="project" onclick="window.location.href='quote.html';" id="quote">
+        <img src="https://plus.unsplash.com/premium_photo-1725985758256-2b311864d1ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cXVvdGUlMjBnZW5lcmF0b3J8ZW58MHx8MHx8fDA%3D" alt="Project 1">
+          <h2>Quote Generator</h2>
+          <p>Get inspired with random quotes every time you click! Explore wisdom, motivation, and creativity in just one tap.</p>
+        </div>
+     
   </div>
 </div>
 
@@ -286,37 +292,28 @@
 
 </section>
  <!-- Blog Ratings -->
-<!-- Blog Ratings -->
-<!-- Blog Ratings -->
-<section class="section" id="ratings">
-  <h2>Blog Ratings</h2>
-  <p>We value your feedback! Rate this blog to help others know what to expect. Your opinion matters to us.</p>
-  <div class="rating-container">
-      <div class="rating">
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9734;</span>
-      </div>
-  </div>
-  <p>Rated 4/5 based on 25 reviews. Join the discussion and share your thoughts in the comments below!</p>
-  <!-- Comments Section -->
-  <div class="comments-section">
-    <h4>Leave a Comment</h4>
-    <textarea placeholder="Write your comment here..." rows="4"></textarea>
-    <br>
-    <button type="button">Submit Comment</button>
 
-    <!-- Existing Comments Display -->
-    <div class="existing-comments">
-      <h4>User Comments:</h4>
-      <ul>
-        <li><strong>John:</strong> Great insights! Learned a lot from this blog.</li>
-        <li><strong>Mary:</strong> Please cover more on JavaScript frameworks next time!</li>
-      </ul>
-    </div>
-  </div>
+<div class="container_r">
+    <h2>Give Your Rating</h2>
+    <form action="https://formsubmit.co/codekraft1325@gmail.com" method="POST">
+        <div class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p class="rating-text">Click on stars to rate</p>
+
+        <input type="hidden" name="rating" id="ratingValue">
+        <input type="hidden" name="_next" value="">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 
   <!-- Related Posts Section -->
   
@@ -551,10 +548,33 @@
       }
   }
 </script>
+<script>
+  const stars = document.querySelectorAll('.star');
+  const ratingText = document.querySelector('.rating-text');
+  const ratingInput = document.getElementById('ratingValue');
+  const nextInput = document.querySelector('input[name="_next"]');
+
+  // Redirecting to the same page after form submission
+  nextInput.value = window.location.href;
+
+  stars.forEach(star => {
+      star.addEventListener('click', function() {
+          let value = this.getAttribute('data-value');
+          ratingInput.value = value;
+          stars.forEach(s => s.classList.remove('active'));
+          
+          for (let i = 0; i < value; i++) {
+              stars[i].classList.add('active');
+          }
+
+          ratingText.innerText = `You rated: ${value} stars!`;
+      });
+  });
+</script>
 
 <script>
   function more(){
-    window.location.href="cont.html";
+    window.location.href="mo.html";
   }
   function url(){
     window.location.href="https://logicnest.netlify.app/";
