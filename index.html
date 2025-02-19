@@ -92,36 +92,7 @@
 
   </div>
 </div>
-<style>
- 
-#suggestions {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 100%;  /* इनपुट बॉक्स के ठीक नीचे */
-    left: 0;
-    width: 200px; /* पूरी चौड़ाई लेगा */
-    background: white;
-    border: 1px solid #ddd;
-    max-height: 150px;
-    overflow-y: auto;
-    
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-#suggestions li {
-    padding: 10px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#suggestions li:hover {
-    background-color: #f0f0f0;
-}
-
-
-</style>
   <header>
     <nav>
       <!-- Logo -->
@@ -133,10 +104,8 @@
         <li><a href="servise.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <!-- Search Bar -->
-      
+      <!-- Search Bar --> 
       </div>
-
     </nav>
     <div class="btn">
     <button onclick="more()" >More</button>
@@ -183,7 +152,7 @@
           <p>Get inspired with random quotes every time you click! Explore wisdom, motivation, and creativity in just one tap.</p>
         </div>
      
-      <div class="project" onclick="window.location.href='quote.html';" id="quote">
+      <div class="project" onclick="window.location.href='to_do.html';" id="task">
         <img src="https://media.istockphoto.com/id/1298394219/vector/flat-vector-illustration-of-person-checking-to-do-list-at-desk.jpg?s=612x612&w=0&k=20&c=32P-N-h388WqRFQxQBQU3wp-eb_ISah6AcIEUft1Cj0=" alt="Project 1">
           <h2>To-Do-List</h2>
           <p>A to-do list helps you stay organized and prioritize tasks efficiently. It’s an essential tool for improving productivity and managing time effectively.</p>
@@ -243,14 +212,6 @@
   </div>
 </div>
 
-<!-- Blog 6: Gadgets Reviews & Comparisons -->
-<div class="blog-card1">
-  <img src="img/gadget.jpeg" alt="Blog 6">
-  <div class="blog-card-content">
-    <h4 style="text-align: right;">Gadget Reviews & Comparisons</h4>
-    <p>Get detailed reviews and comparisons of the latest gadgets and devices.</p>
-  </div>
-</div>
 
 <!-- Blog 7: Coding & Development Tips -->
 <div class="blog-card">
@@ -279,32 +240,8 @@
   </div>
 </div>
 
-<!-- Blog 10: Tech for Sustainability -->
-<div class="blog-card1">
-  <img src="img/grren.jpeg" alt="Blog 8">
-  <div class="blog-card-content">
-    <h4 style="text-align: right;">Tech for Sustainability</h4>
-    <p>Explore green technology innovations for a more sustainable future.</p>
-  </div>
-</div>
 
-<!-- Blog 11: Future Tech Innovations -->
-<div class="blog-card">
-  <img src="img/futer.png" alt="Blog 9">
-  <div class="blog-card-content">
-    <h4>Future Tech Innovations</h4>
-    <p>Dive into robotics, AR/VR, and Metaverse possibilities.</p>
-  </div>
-</div>
 
-<!-- Blog 12: Startup Tech Solutions -->
-<div class="blog-card1">
-  <img src="img/sas.jpeg" alt="Blog 10">
-  <div class="blog-card-content">
-    <h4 style="text-align: right;">Startup Tech Solutions</h4>
-    <p>Discover SaaS tools and automation tech for startups.</p>
-  </div>
-</div>
 
 </section>
  <!-- Blog Ratings -->
@@ -489,67 +426,74 @@
 
 <script>
   
-    // Projects Data
-    const projects = [
-        { id: "ai", name: "AI Trends", url: "more.html" },
-        { id: "logic", name: "LogicNest", url: "https://logicnest.netlify.app/" },
-        { id: "joke", name: "Joke Generator", url: "joke.html" }
-    ];
+   // Projects Data
+const projects = [
+{ id: "ai", name: "AI Trends", url: "more.html" },
+{ id: "logic", name: "LogicNest", url: "https://logicnest.netlify.app/" },
+{ id: "joke", name: "Joke Generator", url: "joke.html" },
+{ id: "quote", name: "Quote Generator", url: "quote.html" },
+{ id: "task", name: "To-Do-List", url: "to_do.html" },
+];
 
-    // Show suggestions when typing
-    function showSuggestions() {
-        let input = document.getElementById("searchInput").value.toLowerCase();
-        let suggestionBox = document.getElementById("suggestions");
-        suggestionBox.innerHTML = "";
+// Show suggestions when typing
+function showSuggestions() {
+let input = document.getElementById("searchInput").value.toLowerCase();
+let suggestionBox = document.getElementById("suggestions");
+suggestionBox.innerHTML = "";
 
-        if (input === "") {
-            suggestionBox.style.display = "none";
-            return;
-        }
+if (input === "") {
+    suggestionBox.style.display = "none";
+    return;
+}
 
-        let matches = projects.filter(project => 
-            project.name.toLowerCase().includes(input) || 
-            project.id.includes(input) ||
-            project.url.includes(input)
-        );
+// पहले पूरे शब्द से मैच करने वाले दिखाएँ
+let exactMatches = projects.filter(project => 
+    project.name.toLowerCase() === input || project.id === input
+);
 
-        if (matches.length > 0) {
-            suggestionBox.style.display = "block";
-            matches.forEach(match => {
-                let listItem = document.createElement("li");
-                listItem.textContent = match.name;
-                listItem.onclick = function() {
-                    document.getElementById("searchInput").value = match.name;
-                    suggestionBox.style.display = "none";
-                };
-                suggestionBox.appendChild(listItem);
-            });
-        } else {
-            suggestionBox.style.display = "none";
-        }
-    }
+// फिर वे प्रोजेक्ट दिखाएँ जिनमें यह अक्षर आता है
+let partialMatches = projects.filter(project => 
+    !exactMatches.includes(project) && 
+    (project.name.toLowerCase().includes(input) || project.id.includes(input))
+);
 
-    // Search function (Redirect only on Go button click)
-    function searchProject() {
-        let query = document.getElementById("searchInput").value.toLowerCase();
-        
-        if (query === "") {
-            alert("Please enter something to search!");
-            return;
-        }
+let matches = [...exactMatches, ...partialMatches];
 
-        let result = projects.find(project => 
-            project.id === query || 
-            project.name.toLowerCase() === query || 
-            project.url.includes(query)
-        );
+if (matches.length > 0) {
+    suggestionBox.style.display = "block";
+    matches.forEach(match => {
+        let listItem = document.createElement("li");
+        listItem.textContent = match.name;
+        listItem.onclick = function() {
+            window.location.href = match.url; // डायरेक्ट पेज पर भेजना
+        };
+        suggestionBox.appendChild(listItem);
+    });
+} else {
+    suggestionBox.style.display = "none";
+}
+}
 
-        if (result) {
-            window.location.href = result.url;
-        } else {
-            alert("No matching project found!");
-        }
-    }
+// Search function (Redirect on Go button click)
+function searchProject() {
+let query = document.getElementById("searchInput").value.toLowerCase();
+
+if (query === "") {
+    alert("Please enter something to search!");
+    return;
+}
+
+let result = projects.find(project => 
+    project.name.toLowerCase() === query || project.id === query
+);
+
+if (result) {
+    window.location.href = result.url;
+} else {
+    alert("No matching project found!");
+}
+}
+
 
 
   function changeLanguage() {

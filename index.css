@@ -19,6 +19,8 @@ position: relative;
 /* Logo styling (always on the left) */
 .logo {
 flex: 1; /* Ensures the logo stays on the left */
+position: relative;
+z-index: 1; /* इसे नीचे रखने के लिए */
 }
 
 .logo img {
@@ -32,8 +34,40 @@ border-radius: 50%;
 flex: 2; /* Center the search bar by allowing it to take more space */
 display: flex;
 justify-content: center; /* Align search bar in the center */
+position: relative;
+align-items: center;
+z-index: 10;
+}
+/* Styling for the suggestions list */
+#suggestions {
+  position: absolute;
+  top: 100%; /* Input field के ठीक नीचे */
+  left: 0;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 100; /* Image से ऊपर लाने के लिए */
 }
 
+/* Individual suggestion item styling */
+#suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  background: beige;
+  color: black;
+}
+
+#suggestions li:hover {
+  background: #f0f0f0;
+}
 .search-container input {
 height: 35px;
 padding: 5px 10px;
@@ -115,7 +149,7 @@ padding: 0 20px; /* Add more padding for a better touch area */
 
 /* Background image for the navbar */
 header {
-  background-image: url('img/Blue\ White\ Patterns\ Digital\ Business\ Blog\ Banner.png'); /* Replace with your image URL */
+  background-image: url('img/Blue White Patterns Digital Business Blog Banner (1).png'); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   height: 230px;

@@ -15,33 +15,4 @@ header h1{
   text-align: center;
 }
 /* Search bar design */
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  margin-left: 60px;
-}
-
-#searchInput {
-  padding: 9px;
-  width: 250px;
-  border: 1px solid ;
-  border-radius: 4px;
-  text-align: center;
-  color: #f0e3e3;
-  background-color: black;
-}
-
-/* Suggestions list design */
-.suggestions {
-  list-style: none;
-  margin-top: 85px;
-  padding: 10;
-  background: rgb(20, 8, 8);
-  color: rgb(241, 237, 237);
-  border: 1px solid #0d0f0f;
-  width: 250px;
-  position: absolute;
-  z-index: 1001;
-}
 
