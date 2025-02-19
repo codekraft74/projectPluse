@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f5;
+            transition: background 0.3s;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        input, select {
+            width: 85%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .add-btn { background: #28a745; color: white; }
+        .edit-btn { background: #007bff; color: white; }
+        .delete-btn { background: #dc3545; color: white; }
+        .add-btn:hover, .edit-btn:hover, .delete-btn:hover { opacity: 0.8; }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 8px 0;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .completed { text-decoration: line-through; color: gray; }
+        .task-overdue { background-color: #f8d7da; }
+        .pending-task { background-color: #f0f8ff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="New Task...">
+        <select id="taskType">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Other">Other</option>
+        </select>
+        <select id="taskPriority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <input type="date" id="taskDate">
+        <input type="time" id="taskTime">
+        <button class="add-btn" onclick="addTask()">Add</button>
+        <p>Pending Tasks: <span id="taskCount">0</span></p>
+        <ul id="taskList"></ul>
+
+        <h3>Pending Tasks</h3>
+        <ul id="pendingTaskList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadTasks);
+
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();
+            let taskType = document.getElementById("taskType").value;
+            let taskPriority = document.getElementById("taskPriority").value;
+            let taskDate = document.getElementById("taskDate").value;
+            let taskTime = document.getElementById("taskTime").value;
+            
+            if (taskText === "" || taskDate === "" || taskTime === "") return;
+
+            // Check if the selected date is in the past
+            let taskDeadline = new Date(taskDate + " " + taskTime);
+            let currentDate = new Date();
+            currentDate.setHours(0, 0, 0, 0); // Set to the start of the day for comparison
+
+            if (taskDeadline < currentDate) {
+                alert("The task date cannot be in the past. Please select a future date.");
+                return;
+            }
+
+            let fiveMinBefore = new Date(taskDeadline.getTime() - 5 * 60 * 1000);
+            let twoMinBefore = new Date(taskDeadline.getTime() - 2 * 60 * 1000);
+
+            let li = document.createElement("li");
+            li.innerHTML = `${taskText} (${taskType}, ${taskPriority}) - ${taskDate} ${taskTime}
+                <button class='edit-btn' onclick='editTask(this)'>✏️</button>
+                <button class='delete-btn' onclick='deleteTask(this)'>❌</button>
+                <button onclick='toggleComplete(this)'>✔️</button>`;
+            
+            li.setAttribute('data-deadline', taskDeadline);
+            li.classList.add("pending-task");
+            document.getElementById("pendingTaskList").appendChild(li);
+
+            // Set reminders
+            setReminder(fiveMinBefore, taskText, "5 minutes before");
+            setReminder(twoMinBefore, taskText, "2 minutes before");
+
+            saveTasks();
+            taskInput.value = "";
+            document.getElementById("taskDate").value = "";
+            document.getElementById("taskTime").value = "";
+            updateTaskCount();
+        }
+
+        function deleteTask(button) {
+            button.parentElement.remove();
+            saveTasks();
+            updateTaskCount();
+        }
+
+        function toggleComplete(button) {
+            button.parentElement.classList.toggle("completed");
+            button.parentElement.classList.remove("pending-task");
+            saveTasks();
+            updateTaskCount();
+        }
+
+        function editTask(button) {
+            let newText = prompt("Edit Task:", button.parentElement.firstChild.textContent.trim());
+            if (newText) {
+                button.parentElement.firstChild.textContent = newText;
+                saveTasks();
+            }
+        }
+
+        function setReminder(time, taskText, reminderMsg) {
+            let now = new Date();
+            let timeDiff = time - now;
+
+            if (timeDiff > 0) {
+                setTimeout(() => {
+                    alert(`Reminder: ${taskText} - ${reminderMsg}`);
+                }, timeDiff);
+            }
+        }
+
+        function saveTasks() {
+            let tasks = [];
+            document.querySelectorAll("#pendingTaskList li").forEach(li => {
+                tasks.push({
+                    text: li.firstChild.textContent.trim(),
+                    completed: li.classList.contains("completed"),
+                    deadline: li.getAttribute('data-deadline')
+                });
+            });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            let savedTasks = localStorage.getItem("tasks");
+            if (savedTasks) {
+                JSON.parse(savedTasks).forEach(task => {
+                    let li = document.createElement("li");
+                    li.innerHTML = `${task.text}
+                        <button class='edit-btn' onclick='editTask(this)'>✏️</button>
+                        <button class='delete-btn' onclick='deleteTask(this)'>❌</button>
+                        <button onclick='toggleComplete(this)'>✔️</button>`;
+                    if (task.completed) li.classList.add("completed");
+                    let taskDeadline = new Date(task.deadline);
+                    li.setAttribute('data-deadline', taskDeadline);
+                    if (!task.completed) {
+                        document.getElementById("pendingTaskList").appendChild(li);
+                    }
+                });
+            }
+            updateTaskCount();
+        }
+
+        function updateTaskCount() {
+            let count = document.querySelectorAll("#pendingTaskList li:not(.completed)").length;
+            document.getElementById("taskCount").textContent = count;
+        }
+    </script>
+</body>
+</html>
