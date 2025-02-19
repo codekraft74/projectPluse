@@ -149,7 +149,7 @@ padding: 0 20px; /* Add more padding for a better touch area */
 
 /* Background image for the navbar */
 header {
-  background-image: url('img/Blue White Patterns Digital Business Blog Banner (1).png'); /* Replace with your image URL */
+  background-image: url('img/Blue\ White\ Patterns\ Digital\ Business\ Blog\ Banner\ \(1\).png'); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   height: 230px;
@@ -160,7 +160,7 @@ header {
 /* PC-specific styling */
 @media (min-width: 1366px) {
 header {
-background-image: url('img/Blue White Patterns Digital Business Blog Banner.png'); /* Replace with your image URL */
+background-image: url('img/Blue\ White\ Patterns\ Digital\ Business\ Blog\ Banner\ \(1\).png'); /* Replace with your image URL */
 background-size: cover; /* Ensure the image covers the header */
 background-position: center; /* Center the background image */
 height: 100vh; /* Increase header height for PC screens */
@@ -175,7 +175,7 @@ position: relative; /* Maintain the position for any additional elements */
 /* iPad-specific styling */
 @media (min-width: 768px) and (max-width: 1024px) {
 header {
-background-image: url('img/Blue White Patterns Digital Business Blog Banner.png'); /* Replace with your image URL */
+background-image: url('img/Blue\ White\ Patterns\ Digital\ Business\ Blog\ Banner\ \(1\).png'); /* Replace with your image URL */
 background-size: cover; /* Ensure the image scales properly */
 background-position: center; /* Center the background image */
 height: 550px; /* Adjust height to fit iPad screens */
