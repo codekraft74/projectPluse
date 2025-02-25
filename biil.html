@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generator</title>
+    <meta name="title" content="ProjectPluse - Real-Life Coding Projects & Free Courses">
+    <meta name="description" content="Learn real-world coding with ProjectPluse! Explore free coding courses, practical projects, and in-depth programming blogs covering JavaScript, Python, Web Development, and Full Stack technologies. Master coding with hands-on examples and industry-focused content.">
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="coding projects, free coding courses, programming blogs, JavaScript projects, Python projects, web development, full stack development, HTML, CSS, ReactJS, Flask, SQL, backend development, software development, coding bootcamp, frontend development, Node.js, Django, AI projects, ML projects, portfolio projects">
+    
+    <!-- Author & Ownership -->
+    <meta name="author" content="ProjectPluse Team">
+    <meta name="copyright" content="ProjectPluse 2025">
+    <meta name="owner" content="ProjectPluse Team">
+
+    <!-- Canonical URL (Avoid Duplicate Content Issues) -->
+    <link rel="canonical" href="https://projectpluse.netlify.app/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Open Graph (OG) Meta Tags for Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://projectpluse.netlify.app/">
+    <meta property="og:title" content="ProjectPluse - Real-Life Coding Projects & Free Courses">
+    <meta property="og:description" content="Learn real-world coding with ProjectPluse! Explore free coding courses, practical projects, and in-depth programming blogs covering JavaScript, Python, Web Development, and Full Stack technologies.">
+    <meta property="og:image" content="https://projectpluse.netlify.app/img/apple-touch-icon.png">
+    <meta property="og:site_name" content="ProjectPluse">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://projectpluse.netlify.app/">
+    <meta name="twitter:title" content="ProjectPluse - Real-Life Coding Projects & Free Courses">
+    <meta name="twitter:description" content="Master real-world coding with free courses, hands-on projects, and expert programming blogs at ProjectPluse!">
+    <meta name="twitter:image" content="https://projectpluse.netlify.app/img/apple-touch-icon.png">
+
+    <!-- Robots Meta Tag (Allow Search Engines to Index) -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="yandexbot" content="index, follow">
+
+    <!-- Google & Bing Site Verification -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE">
+
+    <!-- Mobile Optimization -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+
+    <!-- Cache Control -->
+    <meta http-equiv="cache-control" content="public, max-age=31536000">
+    <meta http-equiv="expires" content="Fri, 1 Jan 2025 00:00:00 GMT">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+
+    <!-- Apple Meta Tags for iOS -->
+    <meta name="apple-mobile-web-app-title" content="ProjectPluse">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Security & Performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; font-src 'self' https:;">
+
+    <!-- Additional SEO Enhancements -->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="global">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Local Business Schema (Structured Data for Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "ProjectPluse",
+      "url": "https://projectpluse.netlify.app/",
+      "logo": "https://projectpluse.netlify.app/img/apple-touch-icon.png",
+      "description": "ProjectPluse offers real-world coding projects, free courses, and programming blogs on JavaScript, Python, Web Development, and Full Stack technologies.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+      }
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0LMF08TVD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0LMF08TVD');
+</script>
+<!-- Alternate Tag for Language Targeting -->
+<link rel="alternate" hreflang="en" href="https://projectpluse.netlify.app/" />
+<link rel="alternate" hreflang="hi" href="https://projectpluse.netlify.app/hi/" />
+
+    <!-- Link Preload for Faster Loading -->
+    <link rel="preload" href="https://projectpluse.netlify.app/img/apple-touch-icon.png" as="image">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            text-align: center;
+        }
+        .table-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #000;
+            margin-top: 20px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+            text-align: center;
+            box-sizing: border-box;
+            display: block;
+        }
+        .flex-box {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bill Generator</h2>
+        <label for="billType">Bill Type:</label>
+        <input type="text" id="billType" placeholder="Enter Bill Type" />
+
+        <div class="flex-box">
+            <div class="box">
+                <h3>User Details</h3>
+                <label>Name:</label>
+                <input type="text" id="userName" placeholder="Enter Name">
+                <label>Mobile:</label>
+                <input type="text" id="userMobile" placeholder="Enter Mobile">
+                <label>Email:</label>
+                <input type="email" id="userEmail" placeholder="Enter Email">
+                <label>Address:</label>
+                <input type="text" id="userAddress" placeholder="Enter Address">
+            </div>
+            <div class="box">
+                <h3>Shop Details</h3>
+                <label>Shop Name:</label>
+                <input type="text" id="shopName" placeholder="Enter Shop Name">
+                <label>Mobile:</label>
+                <input type="text" id="shopMobile" placeholder="Enter Mobile">
+                <label>Email:</label>
+                <input type="email" id="shopEmail" placeholder="Enter Email">
+                <label>Address:</label>
+                <input type="text" id="shopAddress" placeholder="Enter Address">
+            </div>
+        </div>
+        
+        <div class="date-time" id="dateTime"></div>
+    </div>
+        
+    <div class="table-container">
+        <table id="billTable">
+            <thead>
+                <tr id="headerRow">
+                    <th>NO.</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Discount (%)</th>
+                    <th>GST (%)</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="billBody">
+            </tbody>
+        </table>
+    </div>
+    
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="addColumn()">Add Column</button>  
+      <h3>Total Bill: ₹<span id="totalBill">0</span></h3>
+
+    <div>
+        <label>Discount on Total Bill (%):</label>
+        <input type="number" id="billDiscount" placeholder="Enter Discount" min="0" value="0" oninput="calculateTotalBill()">
+    </div>
+
+    <div>
+        <label>Payment Mode:</label>
+        <select id="paymentMode">
+            <option value="Cash">Cash</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="UPI">UPI</option>
+        </select>
+    </div>
+    <button onclick="downloadPDF()">Download Bill</button>
+
+  
+
+    <script>
+        let totalBill = 0;
+        let columnAdded = false;  // Track if a column has been added
+        
+    
+       // 🛠 Row Add करने के function में नया कॉलम भी handle करना:
+function addRow() {
+    const tableBody = document.getElementById("billBody");
+    const rowCount = tableBody.rows.length + 1;
+    const row = tableBody.insertRow();
+
+    row.innerHTML = `
+        <td>${rowCount}</td>
+        <td><input type="text" class="item" placeholder="Item Name"></td>
+        <td><input type="number" class="quantity" placeholder="Quantity" min="1" oninput="updateTotal(this)"></td>
+        <td><input type="number" class="price" placeholder="Price" min="1" oninput="updateTotal(this)"></td>
+        <td><input type="number" class="discount" placeholder="Discount" min="0" value="0" oninput="updateTotal(this)"></td>
+        <td><input type="number" class="gst" placeholder="GST" min="0" value="0" oninput="updateTotal(this)"></td>
+        <td class="total">₹0</td>
+        <td><button onclick="removeRow(this)">Remove</button></td>
+    `;
+
+    // **अगर नया कॉलम पहले से add हो चुका है, तो उस कॉलम की नई row में भी input जोड़ें**
+    const extraColumns = document.querySelectorAll("#headerRow th").length - 8; // 8 क्योंकि पहले से 8 कॉलम हैं (NO, Item, Qty, Price, Discount, GST, Total, Action)
+    for (let i = 0; i < extraColumns; i++) {
+        let newCell = row.insertCell(-1);
+        newCell.innerHTML = `<input type="text" placeholder="New Column">`;
+    }
+
+    updateRowNumbers();
+}
+        function updateTotal(input) {
+            const row = input.parentElement.parentElement;
+            const quantity = row.querySelector(".quantity").value || 0;
+            const price = row.querySelector(".price").value || 0;
+            const discount = parseFloat(row.querySelector(".discount").value) || 0;
+            const gst = parseFloat(row.querySelector(".gst").value) || 0;
+
+            let total = quantity * price;
+            total -= (total * discount) / 100;
+            total += (total * gst) / 100;
+
+            row.querySelector(".total").innerText = `₹${total.toFixed(2)}`;
+            calculateTotalBill();
+        }
+        
+        function calculateTotalBill() {
+            totalBill = 0;
+            document.querySelectorAll(".total").forEach(cell => {
+                totalBill += parseFloat(cell.innerText.replace("₹", "")) || 0;
+            });
+            document.getElementById("totalBill").innerText = totalBill;
+        }
+        
+        function removeRow(button) {
+            button.parentElement.parentElement.remove();
+            updateRowNumbers();
+            calculateTotalBill();
+        }
+
+        function updateRowNumbers() {
+            const rows = document.querySelectorAll("#billBody tr");
+            rows.forEach((row, index) => {
+                row.cells[0].innerText = index + 1;
+            });
+        }
+        
+        function promptColumnName() {
+            if (columnAdded) {
+                alert("Column already added.");
+                return;
+            }
+            const columnName = prompt("Enter Column Name:");
+            if (columnName) {
+                addColumn(columnName);
+            }
+        }
+        
+       
+        function addColumn() {
+            const columnName = prompt("Enter Column Name:");
+            if (!columnName) return;
+        
+            const table = document.getElementById("billTable");
+        
+            // **Header में नया कॉलम जोड़ें**
+            const headerRow = document.getElementById("headerRow");
+            const newHeader = document.createElement("th");
+            newHeader.innerText = columnName;
+            headerRow.appendChild(newHeader);
+        
+            // **Existing Rows में नया कॉलम जोड़ें**
+            const rows = document.querySelectorAll("#billBody tr");
+            rows.forEach(row => {
+                let newCell = row.insertCell(-1); // आखिरी कॉलम में नया सेल जोड़ना
+                newCell.innerHTML = `<input type="text" placeholder="${columnName}">`; // Cell में Input Field जोड़ना
+            });
+        }
+        
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+        
+            let y = 10; // Vertical position tracker
+        
+            // **Bill Type**
+            let billType = document.getElementById("billType").value || "Bill Receipt";
+            doc.setFontSize(16);
+            doc.text(billType, 80, y);
+            y += 10;
+        
+            // **Current Date & Time**
+            let currentDate = new Date().toLocaleString();
+            doc.setFontSize(10);
+            doc.text(`Date & Time: ${currentDate}`, 80, y);
+            y += 10;
+        
+            // **User & Shop Details**
+            doc.setFontSize(12);
+            doc.text("User Details:", 10, y);
+            doc.text("Shop Details:", 120, y);
+            y += 6;
+        
+            let userDetails = [
+                `Name: ${document.getElementById("userName").value || "N/A"}`,
+                `Mobile: ${document.getElementById("userMobile").value || "N/A"}`,
+                `Email: ${document.getElementById("userEmail").value || "N/A"}`,
+                `Address: ${document.getElementById("userAddress").value || "N/A"}`
+            ];
+        
+            let shopDetails = [
+                `Shop: ${document.getElementById("shopName").value || "N/A"}`,
+                `Mobile: ${document.getElementById("shopMobile").value || "N/A"}`,
+                `Email: ${document.getElementById("shopEmail").value || "N/A"}`,
+                `Address: ${document.getElementById("shopAddress").value || "N/A"}`
+            ];
+        
+            userDetails.forEach((detail, index) => {
+                doc.text(detail, 10, y + (index * 6));
+                doc.text(shopDetails[index], 120, y + (index * 6));
+            });
+        
+            y += userDetails.length * 6 + 10;
+        
+            // **Table Header Data (डायनामिक रूप से सभी कॉलम लें, "Action" कॉलम को छोड़कर)**
+            let headers = [];
+            let headerCells = document.querySelectorAll("#headerRow th");
+            headerCells.forEach((th, index) => {
+                if (th.innerText !== "Action") {
+                    headers.push(th.innerText);
+                }
+            });
+        
+            // **Table Body Data (डायनामिक रूप से सभी कॉलम लें, "Action" कॉलम को छोड़कर)**
+            let data = [];
+            document.querySelectorAll("#billBody tr").forEach(row => {
+                let rowData = [];
+                let cells = row.querySelectorAll("td");
+                cells.forEach((cell, index) => {
+                    if (index !== cells.length - 1) {  // "Action" कॉलम को छोड़ें
+                        let input = cell.querySelector("input");
+                        rowData.push(input ? input.value : cell.innerText);
+                    }
+                });
+                data.push(rowData);
+            });
+        
+            // **PDF में Table जोड़ना**
+            doc.autoTable({
+                startY: y,
+                head: [headers],
+                body: data
+            });
+        
+            y = doc.lastAutoTable.finalY + 10; // Table के बाद की Position
+        
+            // **Total Bill**
+            doc.setFontSize(14);
+            doc.text(`Total Bill: ₹${document.getElementById("totalBill").innerText}`, 10, y);
+        
+            // **Payment Mode**
+            doc.setFontSize(12);
+            let paymentMode = document.getElementById("paymentMode").value;
+            doc.text(`Payment Mode: ${paymentMode}`, 10, y + 10);
+        
+            doc.save("bill.pdf");
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
